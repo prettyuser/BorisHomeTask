@@ -10,6 +10,6 @@ namespace BorisHomeTask.Repository
 {
     public interface IUserRepository : IGenericRepository<User>
     {
-        User GetById(long id);
+        User GetById(int id);
     }
 }

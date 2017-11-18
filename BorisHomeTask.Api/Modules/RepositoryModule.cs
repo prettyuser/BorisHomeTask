@@ -12,9 +12,10 @@ namespace BorisHomeTask.Api.Modules
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterAssemblyTypes(Assembly.Load("BorisHomeTask.Repository"))
-                   .Where(t => t.Name.EndsWith("Repository"))
-                   .AsImplementedInterfaces()
-                  .InstancePerLifetimeScope();
+                       .Where(t => t.Name.EndsWith("Repository"))
+                       .AsImplementedInterfaces()
+                       .AsSelf()
+                       .InstancePerRequest();
         }
     }
 }

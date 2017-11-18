@@ -9,6 +9,6 @@ namespace BorisHomeTask.Manager.Contract
 {
     public interface IUserService : IEntityService<User>
     {
-        User GetById(long Id);
+        User GetById(int Id);
     }
 }

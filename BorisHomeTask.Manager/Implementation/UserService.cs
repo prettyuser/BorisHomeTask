@@ -16,14 +16,14 @@ namespace BorisHomeTask.Manager.Implementation
         IUserRepository _userRepository;
 
         public UserService(IUnitOfWork unitOfWork, IUserRepository userRepository)
-            : base(unitOfWork, userRepository)
-        {
+          : base(unitOfWork, userRepository)
+      {
             _unitOfWork = unitOfWork;
             _userRepository = userRepository;
         }
 
 
-        public User GetById(long Id)
+        public User GetById(int Id)
         {
             return _userRepository.GetById(Id);
         }

@@ -16,14 +16,9 @@ namespace BorisHomeTask.Repository
         {
         }
 
-        public override IEnumerable<User> GetAll()
+        public User GetById(int id)
         {
-            return _entities.Set<User>().AsEnumerable();
-        }
-
-        public User GetById(long id)
-        {
-            return _dbset.Where(x => x.Id == id).FirstOrDefault();
+            return FindBy(x => x.Id == id).FirstOrDefault();
         }
     }
 }

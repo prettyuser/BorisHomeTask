@@ -7,6 +7,7 @@ using System.Web.Routing;
 using Autofac.Integration.Mvc;
 using Autofac;
 using BorisHomeTask.Api.Modules;
+using System.Web.Http;
 
 namespace BorisHomeTask.Api
 {
@@ -16,7 +17,7 @@ namespace BorisHomeTask.Api
         {
             // Code that runs on application startup
             AreaRegistration.RegisterAllAreas();
-            //GlobalConfiguration.Configure(WebApiConfig.Register);
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
 

@@ -10,21 +10,29 @@ using System.Threading.Tasks;
 namespace BorisHomeTask.Domain.Entities.Application
 {
         [Table("User")]
-        public class User : AuditableEntity<int>
+        public class User : Entity<int>, IUser
         {
             [Required]
-            [MaxLength(30)]
+            [MaxLength(40)]
             public string Name { get; set; }
 
-            [Required]
-            [MaxLength(30)]
+            [MaxLength(60)]
             public string Surname { get; set; }
 
             [MaxLength(40)]
+            [Display(Name = "E-mail")]
             public string Email { get; set; }
 
-            [MaxLength(15)]
+            [MaxLength(20)]
+            [Display(Name = "Phone Number")]
             public string PhoneNumber { get; set; }
-        }   
+
+            public virtual ICollection<WorkPlace> WorkPlaces { get; set; }
+
+            public User()
+            {
+                WorkPlaces = new List<WorkPlace>();
+            }
+    }   
 }
 

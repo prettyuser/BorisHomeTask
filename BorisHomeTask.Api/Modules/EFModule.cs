@@ -18,7 +18,6 @@ namespace BorisHomeTask.Api.Modules
 
             builder.RegisterType(typeof(BorisHomeTaskContext)).As(typeof(DbContext)).InstancePerLifetimeScope();
             builder.RegisterType(typeof(UnitOfWork)).As(typeof(IUnitOfWork)).InstancePerRequest();
-
         }
 
     }

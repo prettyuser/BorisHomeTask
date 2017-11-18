@@ -11,10 +11,11 @@ namespace BorisHomeTask.Api.Modules
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterAssemblyTypes(Assembly.Load("BorisHomeTask.Service"))
-                      .Where(t => t.Name.EndsWith("Service"))
-                      .AsImplementedInterfaces()
-                      .InstancePerLifetimeScope();
+            builder.RegisterAssemblyTypes(Assembly.Load("BorisHomeTask.Manager"))
+                       .Where(t => t.Name.EndsWith("Service"))
+                       .AsImplementedInterfaces()
+                       .AsSelf()
+                       .InstancePerRequest();
         }
     }
 }
